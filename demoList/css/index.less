@@ -1,0 +1,121 @@
+@r:50rem;
+a,
+input,
+button {
+  /* 清除按下的阴影 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+input,
+button {
+  /* 解决ios下自带的圆角 */
+  -webkit-appearance: none;
+  border-radius: 0px;
+}
+body {
+  margin: 0;
+   /* 禁止选中文字 */
+  -webkit-user-select: none;
+}
+body * {
+  -webkit-user-select: none;
+  /* 所有手机支持的字体样式 */
+  font-family: Helvetica;
+}
+body {
+  -webkit-text-size-adjust: 100%;
+  /* 禁止掉用户在横竖屏切换的时候字体大小的改变 */
+}
+h1 {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+header{
+    height: 103/@r;
+    background:#ef3239;
+    position:relative;
+    border-bottom:1px solid #a82d31;
+    box-sizing: border-box;
+    h1{
+        text-align: center;
+        font-size:39/@r;
+        color: #fff;
+        line-height:88/@r;
+        span{
+            font-size: 26/@r;
+            margin-right:16/@r;
+        }
+    }
+    a{
+      width: 128/@r;
+      height: 88/@r;
+      line-height: 88/@r;
+      text-align: center;
+      position:absolute;
+      top:0;
+    }
+    #task{
+        left:0;
+        span{
+           font-size: 37/@r; 
+        }
+    }
+    #refresh{
+        right:0;
+        span{
+            font-size: 36/@r;
+        }
+    }
+    span{
+        color:#fff;
+    }
+}
+//nav区域
+.active{
+    color:#f23838 !important;
+}
+#nav{
+    height: 105/@r;
+    background: #fdfdfd;
+    border-top:1px solid #b0b0b0;
+    border-bottom:1px solid #ccc;
+    box-sizing: border-box;
+    a{
+        float: left;
+        width: 25%;
+        height: 103/@r;
+        line-height: 103/@r;
+        text-align: center;
+        font-size: 35/@r;
+        color: #848689;
+    }
+    #spanBox{
+      width: 37/@r;
+      display: inline-block;
+      vertical-align: middle; 
+      span{
+          float: left;
+      }     
+      //解决错位
+      .glyphicon-chevron-down{
+          left:-3/@r;
+          top:-4/@r;
+      }
+    }
+}

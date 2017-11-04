@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,user-scalable=no"/>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				border:1px solid #000;
+				padding:100px;
+				-webkit-perspective: 100px;
+				perspective: 100px;
+				-webkit-perspective-origin: 100px bottom;
+			}
+			.div{
+				width: 100px;
+				height: 100px;
+				background:red;
+				margin:10px auto;
+				transition: 3s;
+				-webkit-transform-style: preserve-3d;
+			}
+			.div span{
+				width: 100px;
+				height: 100px;
+				background:pink;
+				display: block;
+				-webkit-transform: rotateX(60deg);
+				transform: rotateX(60deg);
+			}
+		</style>
+		<script type="text/javascript">
+			document.addEventListener('touchstart',function(ev){
+				ev.preventDefault();
+			},{passive:false});
+			window.onload = function(){
+				var div = document.querySelectorAll('.div');
+				
+				div[0].addEventListener('touchend',function(){
+					div[0].style.WebkitTransform = div[0].style.transform = "rotateY(360deg)";
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<!-- 
+			景深：->这个元素距离我有多远或者我在多远之外来查看这个元素
+				给要做3d变换元素的父级
+				-webkit-perspective
+				景深原点视角：
+				perspective-origin:x y ->默认center center ->视线方向  站在哪个位置上去查看这个元素
+					center center:站在元素的中心来看
+					center top :上往下看
+					center bottom ：下往上看
+					100px bottom : 从box的左上角开始测量向左延伸100px的距离
+				
+			
+			rotate:x/y/z/rotate3D
+			translate:X/Y/Z/3D
+				Z轴的位移就是前后的位移
+					负值：里面走 距离我们越来越远
+					正值：外面走 距离我们越来越近
+					
+			transform-style:元素在做3D变换的时候，是否保留子元素的3D变换
+				flat:不保留
+				preserve-3d：保留3D变换的效果
+		-->
+		<div id="box">
+			<div class="div"><span></span></div>
+		</div>
+	</body>
+</html>

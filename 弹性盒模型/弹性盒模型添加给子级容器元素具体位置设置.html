@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{margin:0;}
+			#box{
+				height: 300px;
+				border:1px solid #000;
+				
+				/* 新版弹性盒模型 */
+				/*display: flex;*/
+				
+				/* 老版弹性盒模型 */
+				display: -webkit-box;
+				
+			}
+			#box div{
+				/* 新版 */
+				
+				width: 50px; 
+				height: 50px; 
+				background: red;
+				text-align: center;
+				line-height: 50px;
+				font-size:40px;
+				color: #fff;
+				border:1px solid green;
+			}
+			#box div:nth-of-type(1){
+				/*order: 5;*/
+				-webkit-box-ordinal-group: 1;
+			}
+			#box div:nth-of-type(2){
+				/*order: 2;*/
+				-webkit-box-ordinal-group: 2;
+			}
+			#box div:nth-of-type(3){
+				/*order: -2;*/
+				-webkit-box-ordinal-group: 0;
+			}
+			#box div:nth-of-type(4){
+				/*order: 0;*/
+				-webkit-box-ordinal-group: 4;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 
+			子元素的尺寸=盒子的尺寸*子元素的box-flex属性值/所有子元素的box-flex属性值的和
+			
+			order:数值越小越靠前，可以接收0或者负值
+			-webkit-box-ordinal-group:数值越小越靠前，。最小值默认处理为1
+		-->
+		<div id="box">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+		</div>
+	</body>
+</html>

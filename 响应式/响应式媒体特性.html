@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{margin:0;}
+			#box{
+				width: 100px;
+				height: 100px;
+				background:red;
+			}
+			@media braille{
+				#box{
+					background:green;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			响应式：一个网站能够兼容多个终端，并且在各个终端都可以有很好的展示体验
+			
+			当屏幕宽度很大的时候，希望一行有6个，当屏幕宽度中等的时候一行有三个，当屏幕宽度较小的时候，一行有2个，当屏幕宽度很小的时候，一行1哥
+			
+			
+			媒体类型：
+				all:所有媒体
+				braille:盲文触觉设备
+				embossed:盲文打印机
+				print:手持设备
+				projection:打印预览
+				screen:彩屏设备
+				speech:听觉，类似的媒体类型
+				tty:不适用像素的设备
+				tv:电视
+			
+		-->
+		<div id="box"></div>
+	</body>
+</html>

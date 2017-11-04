@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,user-scalable=no"/>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				border:1px solid #000;
+				padding:100px;
+			}
+			.div{
+				width: 100px;
+				height: 100px;
+				background:red;
+				margin:10px auto;
+				transition: 3s;
+				/*transform-origin: center center;*/
+				-webkit-transform-origin: 0px 0px;
+				transform-origin: 0 0;
+			}
+			
+		</style>
+		<script type="text/javascript">
+			document.addEventListener('touchstart',function(ev){
+				ev.preventDefault();
+			},{passive:false});
+			window.onload = function(){
+				var div = document.querySelectorAll('.div');
+				
+				div[0].addEventListener('touchend',function(){
+					//div[0].style.WebkitTransform = div[0].style.transform = "scale(0.5) translateX(100px)";
+					div[0].style.WebkitTransform = div[0].style.transform = "matrix(1,0,0,1,0,0)";
+					//console.log(getComputedStyle(div[0])["transform"]); matrix()
+					//console.log(div[0].style.transform);
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<!--
+			
+			matrix(1,0,0,1,0,0);
+			matrix(a,b,c,d,e,f);
+			位移：
+				x=100
+				X轴位移：e + 100
+				y=100;
+				Y轴位移：f + y;
+			缩放：
+				X轴
+					a = a*x(x->缩放倍数)
+					c = c*x
+					e = e*x
+				Y轴
+					b = b*x(x->缩放倍数)
+					d = d*x
+					f = f*x
+			斜切(采用正切)
+				x斜切：deg
+					角度->弧度 = deg*Math.PI/180
+					c = Math.tan(30*Math.PI/180);
+				Y斜切
+					b =  Math.tan(30*Math.PI/180)
+			
+			旋转：
+				a=Math.cos(deg/180*Math.PI)
+				b=Math.sin(deg/180*Math.PI)
+				c=-Math.sin(deg/180*Math.PI)
+				d=Math.cos(deg/180*Math.PI)
+		-->
+		<div id="box">
+			<div class="div">1</div>
+		</div>
+	</body>
+</html>

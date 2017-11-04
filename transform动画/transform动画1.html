@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,user-scalable=no"/>
+		<title></title>
+		<style type="text/css">
+			#box{width: 100px;height: 100px;border:1px solid #000;padding:100px;}
+			#div{
+				height: 100px;
+				background: red;
+				-webkit-transform: rotate(60deg);
+				transform: rotate(60deg);
+			}
+		</style>
+		<script type="text/javascript">
+			function cssTransform(element,attr,val){
+				//两个参数获取//三个参数设置
+				/*element.transform = {
+					rotate : 40,
+					scale : 100,
+					skew : ,
+					translate : 
+				}
+					console.log(element.transform.rotate)
+				*/
+				if(typeof val == "undefined"){//获取
+					//console.log("获取");
+					
+				}else{//设置
+					//console.log("设置");
+				}
+			}
+			//获取到当前旋转的多少度
+			window.onload = function(){
+				var div = document.querySelector("#div");
+				//console.log(getComputedStyle(div)["transform"]);
+				cssTransform(div,"rotate");
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div id="div">1</div>
+		</div>
+	</body>
+</html>

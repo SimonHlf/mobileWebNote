@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,user-scalable=no"/>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="bs/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script type="text/javascript">
+			(function(){
+				var html = document.documentElement;
+				var hw = html.getBoundingClientRect().width;
+				html.style.fontSize = hw/15 + 'px';
+			})();
+		</script>
+	</head>
+	<body>
+		<!-- 头部区域 -->
+		<header>
+			<a id="task" href="javascript:;"><span class="glyphicon gy glyphicon-tasks"></span></a>
+			<h1><span class="glyphicon glyphicon-lock"></span>miaov</h1>
+			<a id="refresh" href="javascript:;"><span class="glyphicon  glyphicon-repeat"></span></a>
+		</header>
+		<!-- nav区域 -->
+		<nav id="nav">
+			<a class="active" href="javascript:;">综合<span class="glyphicon glyphicon-chevron-down"></span></a>
+			<a href="javascript:;">销量<span></span></a>
+			<a href="javascript:;">价格
+				<span id="spanBox">
+					<span class="glyphicon glyphicon-chevron-up"></span>
+					<span class="active glyphicon  glyphicon-chevron-down"></span>
+				</span>
+			</a>
+			<a href="javascript:;">筛选<span class="glyphicon glyphicon-filter"></span></a></a>
+		</nav>
+	</body>
+</html>

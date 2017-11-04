@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,user-scalable=no"/>
+		<style type="text/css">
+			body{margin:0;}
+			body,html{height: 100%;overflow: hidden;}
+			header{
+				height: 40px;
+				line-height: 40px;
+				font-size: 20px;
+				color: #fff;
+				background:#000;
+				text-align: center;
+			}
+			#wrap{
+				position: absolute;
+				left:0;
+				right:0;
+				bottom: 0;
+				top:40px;
+				overflow: hidden;
+			}
+			#list{
+				margin:0;
+				padding:0;
+				list-style: none;
+				
+			}
+			#list li{
+				height: 30px;
+				line-height: 30px;
+				border-bottom:1px solid #000;
+				text-indent: 20px;
+			}
+		</style>
+		<script type="text/javascript">
+			document.addEventListener('touchstart',function(ev){
+				ev.preventDefault();
+			},{passive:false});
+			function setListInner(){
+				var list = document.querySelector('#list');
+				var inner = '';
+				for(var i=0;i<100;i++){
+					inner += "<li>这是第"+ i +"条内容</li>";
+				}
+				list.innerHTML = inner;
+			}
+			window.onload = function(){
+				setListInner();
+				var wrap = document.querySelector("#wrap");
+				var list = document.querySelector('#list');
+				var startPoint = 0;
+				var startEl = 0;//当前元素的一个位置
+				var elTranslateY = 0;
+				list.addEventListener('touchstart',function(e){
+					startPoint = e.changedTouches[0].pageY;
+					startEl = elTranslateY;
+				});
+				list.addEventListener('touchmove',function(e){
+					var nowPoint = e.changedTouches[0].pageY;
+					//console.log(nowPoint - startPoint);
+					var dis = nowPoint - startPoint;
+					elTranslateY = dis + startEl;
+					console.log(elTranslateY)
+					list.style.transform = list.style.WebkitTransform = "translateY("+ elTranslateY +"px)";
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<header>妙味滑屏</header>
+		<!-- 采用translate来做动画 -->
+		<div id="wrap">
+			<ul id="list"></ul>
+		</div>
+	</body>
+</html>

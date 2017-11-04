@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,user-scalable=no"/>
+		<style type="text/css">
+			#div1{width: 200px; height: 200px; background: red;}
+		</style>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<script type="text/javascript">
+			/*
+			 	移动端三大事件：
+			 		手指按下：ontouchstart
+			 		手指移动:ontouchmove
+			 		手指抬起:ontouchend
+			 	注意：
+			 		在移动端开发的时候，浏览器的模拟器时好时坏，一般不用on的方式绑定事件函数，采用事件绑定的方式->addEventListener
+			 */
+			var div = document.getElementById("div1");
+			/*div.ontouchstart = function(){
+				alert("123");
+			}*/
+			div.addEventListener('touchstart',start,false);
+			function start(){
+				console.log("按下");
+			}
+			div.addEventListener('touchmove',move,false);
+			function move(){
+				console.log("move");
+			}
+			div.addEventListener('touchend',end,false);
+			function end(){
+				console.log("end");
+			}
+		</script>
+	</body>
+</html>

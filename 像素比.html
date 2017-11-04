@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				background:red;
+			}
+		</style>
+		<script type="text/javascript">
+			alert(window.devicePixelRatio);
+		</script>
+	</head>
+	<body>
+		像素比：浏览器厂商出厂时的一个设置，是window的一个属性 window.devicePixelRatio<br>
+		像素比：把一个像素放大至n个像素去显示n=window.devicePixelRatio，只能获取，不能设置<br>
+		像素比为2的话：宽100高100就会放大成宽200高200显示，<br>
+		本身屏幕大小是640，但是我要求一个像素放大成2个像素去显示，那总共一屏能够放下320个像素<br>
+		每款手机都有像素比，并且还不太一样<br>
+		由于像素比的存在，所以，在选图的时候，千万不能根据设计师的尺寸去截图，而是根据最少一个750以上的设计图去切<br> 
+		设计图最少>750
+		<div id="box"></div>
+	</body>
+</html>

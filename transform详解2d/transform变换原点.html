@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,user-scalable=no"/>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				border:1px solid #000;
+				padding:100px;
+			}
+			#div{
+				width: 100px;
+				height: 100px;
+				background:red;
+				transition: 3s;
+				/*transform-origin: center center;*/
+				-webkit-transform-origin: 0px 0px;
+				transform-origin: 0 0;
+			}
+		</style>
+		<script type="text/javascript">
+			document.addEventListener('touchstart',function(ev){
+				ev.preventDefault();
+			},{passive:false});
+			window.onload = function(){
+				var oBox = document.querySelector('#box');
+				var oDiv = document.querySelector('#div');
+				
+				oDiv.addEventListener('touchend',function(){
+					//oDiv.style.WebkitTransform = oDiv.style.transform = "rotate(360deg)";
+					//oDiv.style.WebkitTransform = oDiv.style.transform = "skew(20deg)";
+					oDiv.style.WebkitTransform = oDiv.style.transform = "scale(0.1)";
+				});
+				/*
+				 	变换圆点 默认center center
+				 	transform-origin:center center /50% 50%->不建议使用百分比
+				 		关键字:left top center right bottom 
+				 		百分比
+				 		近距离单位：px em rem
+				 	当只写一个值的时候，另一个默认的是center 
+				 	transform-origin:0 0->左上角为基点
+				 	transform-origin:-100 -100->根据左上角往上走100 往左走100为基点
+				 	transoform-origin:left;->围绕左侧中心点旋转
+				 	transform-origin:left top->围绕左上侧进行旋转
+				 	translate不会收到transform-origin的影响
+				 */
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div id="div">1</div>
+		</div>
+	</body>
+</html>

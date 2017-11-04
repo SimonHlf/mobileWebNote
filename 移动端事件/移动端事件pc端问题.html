@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,user-scalable=no"/>
+		<style type="text/css">
+			#div1{width: 200px; height: 200px; background: red;}
+		</style>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<script type="text/javascript">
+			/*
+			 	鼠标的PC上的事件比移动端的事件略慢，大概是在300ms左右
+			 */
+			var div = document.getElementById("div1");
+			div.addEventListener('touchend',end,false);
+			div.addEventListener('mouseup',up,false);
+			function end(){
+				console.log("end");
+			}
+			function up(){
+				console.log('鼠标抬起');
+			}
+		</script>
+	</body>
+</html>

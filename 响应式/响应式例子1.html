@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{margin:0;}
+			div{
+
+				height: 100px;
+				background:red;
+				float: left;
+				border:1px solid #000;
+				font-size: 20px;
+				color: #fff;
+				box-sizing: border-box;
+			}
+			@media all and (min-width:400px){
+				div{
+					width: 100%;
+				}
+			}
+			@media all and (min-width:500px){
+				div{
+					width: 50%;
+				}
+			}
+			@media all and (min-width:800px){
+				div{
+					width: 33.333%;
+				}
+			}
+			@media all and (min-width:1000px){
+				div{
+					width: 16.667%;
+				}
+			}
+			@media not tv{
+				div{
+					background:#fff;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			
+			屏幕大于1000：一行6个
+			屏幕大于800：一行3个
+			屏幕大于600：一行两个
+			屏幕大于400：一行一个
+			
+		-->
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>
+	</body>
+</html>

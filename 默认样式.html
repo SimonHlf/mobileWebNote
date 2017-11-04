@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"/>
+		<title></title>
+		<style type="text/css">
+			body{
+				/*移动端每台设备的默认字体不一样，但是所有设备都具有一个Helvetica应用字体*/
+				font-family: helvetica;
+			}
+			/* 禁止文字缩放 */
+			body *{
+				-webkit-text-size-adjust: 100%;
+				/* 取消选中文字设置 */
+				-webkit-user-select: none;
+			}
+			/* 去除按钮点击下的高亮 */
+			a,input,button{
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+			/* ios下去除按钮的圆角 */
+			input,button{
+				-webkit-appearance: none;
+				border-radius: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="http://www.zhu-xue.cn">助学网</a><br>
+		
+		<input type="button" value="按钮" /><br>
+		
+		<p>去掉移动端选中</p>
+		
+		a链接点击有阴影：<br>
+		解决：-webkit-tap-highlight-color: rgba(0,0,0,0);<br>
+		input button在ios下会变成圆角<br>
+		解决：-webkit-appearance: none;<br>
+		默认字体设置：<br>
+		
+	</body>
+</html>

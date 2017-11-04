@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,user-scalable=no"/>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				border:1px solid #000;
+				padding:100px;
+			}
+			#div{
+				width: 100px;
+				height: 100px;
+				background:red;
+				transition: 1s;
+			}
+		</style>
+		<script type="text/javascript">
+			document.addEventListener('touchstart',function(ev){
+				ev.preventDefault();
+			},{passive:false});
+			window.onload = function(){
+				var oBox = document.querySelector('#box');
+				var oDiv = document.querySelector('#div');
+				
+				oDiv.addEventListener('touchend',function(){
+					//oDiv.style.WebkitTransform = oDiv.style.transform = "rotate(90deg)";
+					//oDiv.style.WebkitTransform = oDiv.style.transform = "skew(20deg)";
+					//oDiv.style.WebkitTransform = oDiv.style.transform = "scale(2)";
+					oDiv.style.WebkitTransform = oDiv.style.transform = "translate(100px,100px)";
+				});
+				/*
+				 	rotate:旋转 deg度数
+				 		默认围绕中心点旋转
+				 	skew:斜切 ->默认X方向 deg
+				 		skewX
+				 		skewY
+				 		正直：左上角 右下角
+				 		负值：右上角 左下角
+				 		围绕中心点变化
+				 	scale:缩放 没有单位 缩放原始大小的多少倍
+				 		不加XY默认XY都缩放
+				 		scaleX:
+				 		scaleY:
+				 		围绕元素中心点
+				 	translate:位移 px rem em %
+				 		默认X轴方向的位移
+				 		translateX
+				 		translateY
+				 */
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div id="div">1</div>
+		</div>
+	</body>
+</html>

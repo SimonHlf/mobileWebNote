@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,user-scalable=no"/>
+		<style type="text/css">
+			* { touch-action: none; }
+			#div1{width: 200px; height: 200px; background: red;position: absolute;left:0;top:0;opacity: .5;}
+		</style>
+		<script type="text/javascript">
+			/*
+			 	移动端的点透：
+			 		当上层元素发生点击的时候，下层元素也有点击或者是焦点特性；
+			 		在300ms之后如果上层元素消失或者隐藏，这个时候目标点就会漂移到下层元素身上，就会触发下层元素的点击行为；
+			 	解决：
+			 		1:下层不要使用有点击或者焦点特性的元素
+			 		2:阻止PC事件
+			 	阻止PC事件优点：
+			 		IOS10下meta标签用户禁止缩放是不可行的
+			 		
+			 */
+			window.onload = function(){
+				var div = document.getElementById('div1');
+				var a = document.getElementById('a');
+				
+				div.addEventListener('touchend',end);
+				
+				a.addEventListener('touchstart',function(){
+					//window.location.href = 'http://www.miaov.com';
+				});
+			
+				
+				function end(){
+					console.log("11")
+					this.style.display = 'none';
+				}
+			}
+			document.addEventListener('touchstart',function(ev){
+				ev.preventDefault();
+			},false);
+			
+		</script>
+	</head>
+	<body>
+		<!--<p id="p">点我啊</p>-->
+		<a id="a">点我啊</a>
+		<div id="div1"></div>
+	</body>
+</html>

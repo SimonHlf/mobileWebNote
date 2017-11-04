@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{margin:0;}
+			#box{
+				height: 300px;
+				border:1px solid #000;
+				
+				/* 新版弹性盒模型 */
+				/*display: flex;*/
+				/* 主轴方向 水平方向 左->右 row*/
+				/*flex-direction: row;*/
+				/* 主轴方向 水平方向 右->左 row-reverse*/
+				/*flex-direction: row-reverse;*/
+				
+				/* 主轴方向 竖直方向 上->下 column*/
+				/*flex-direction: column;*/
+				/* 主轴方向 竖直方向 下->上 column-reverse 附着在父级底部 主轴结束的地方开始反序*/
+				/*flex-direction: column-reverse;*/
+				
+				
+				
+				
+				
+				/* 老版弹性盒模型 */
+				display: -webkit-box;
+				/* 主轴方向 水平方向等同新版中的row */
+				-webkit-box-orient: horizontal;
+				/* 主轴方向 竖直方向 上->下 等同新版中的column*/
+				/*-webkit-box-orient: vertical;*/
+				/*-webkit-box-direction: normal;*/
+				
+				/* 垂直方向的reverse附着在父级的顶部 */
+				-webkit-box-direction: reverse;
+				
+			}
+			#box div{
+				width: 50px; 
+				height: 50px; 
+				background: red;
+				text-align: center;
+				line-height: 50px;
+				font-size:40px;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+		</div>
+	</body>
+</html>
